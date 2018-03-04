@@ -4,19 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tasker</title>
-        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-        <script>
-                  // Initialize Firebase
-                  var config = {
-                    apiKey: "AIzaSyAXNLXFvexDMw2_UXpP5q4aDYYG4xJcYWo",
-                    authDomain: "auth-2b8cc.firebaseapp.com",
-                    databaseURL: "https://auth-2b8cc.firebaseio.com",
-                    projectId: "auth-2b8cc",
-                    storageBucket: "auth-2b8cc.appspot.com",
-                    messagingSenderId: "119297236225"
-                  };
-                  firebase.initializeApp(config);
-        </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
@@ -37,6 +24,7 @@
       <section class="section">
         <div class="container">
           <nav class="level">
+
             <!-- Left side -->
             <div class="level-left">
               <div class="level-item">
@@ -77,11 +65,30 @@
               <a class="button" href="sign_up.html">
                 Register
               </a>
+              <h1 id="big"></h1>
             </div>
           </div>
-          
         </div>
       </section>
+
+      
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDD68a9OuEjCNeZMjXqvWvjKyN9GO1XpvU",
+            authDomain: "taskassigner-13c49.firebaseapp.com",
+            databaseURL: "https://taskassigner-13c49.firebaseio.com",
+            projectId: "taskassigner-13c49",
+            storageBucket: "taskassigner-13c49.appspot.com",
+            messagingSenderId: "293878815857"
+          };
+          firebase.initializeApp(config);
+          var database = firebase.database();
+          
+          var dbref = database.ref().child('text');
+          dbref.on('value', snap=>big.innerText = snap.val());
+        </script>
     </body>
 <html>
 
