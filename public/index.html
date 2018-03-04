@@ -14,9 +14,17 @@
             <h1 class="title">
               Tasker
             </h1>
-            <h2 class="subtitle">
-              Tasker is an application where people can submit help requests for other people during a disaster!
-            </h2>
+            <nav class="level">
+              <div class="level-left">
+                <h2 class="subtitle">
+                  Tasker is an application where people can submit help requests for other people during a disaster!
+                </h2>
+              </div>
+
+              <div class="level-right">
+                <button class="button" id="btnLogout">Logout</button>
+              </div>
+            </nav>
           </div>
         </div>
       </section>
@@ -52,19 +60,13 @@
               <p class="level-item"><a>Current</a></p>
               <p class="level-item"><a>History</a></p>
               <p class="level-item"><a>Deleted</a></p>
-              <p class="level-item"><a class="button is-dark">New</a></p>
+              <p class="level-item"><a class="button is-dark" href="help.html">New</a></p>
             </div>
           </nav>
 
           <div class="container">
             <div class="notification">
               This container is <strong>centered</strong> on desktop.<br />
-              <a class="button" href="login.html">
-                Log in
-              </a>
-              <a class="button" href="sign_up.html">
-                Register
-              </a>
               <h1 id="big"></h1>
             </div>
           </div>
@@ -89,7 +91,6 @@
           var dbref = database.ref().child('text');
           dbref.on('value', snap=>big.innerText = snap.val());
         </script>
+        <script src="js/logout.js"></script>
     </body>
 <html>
-
-
