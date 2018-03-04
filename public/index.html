@@ -77,6 +77,7 @@
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
         <script>
           // Initialize Firebase
+		  var Firebase = require("firebase");
           var config = {
             apiKey: "AIzaSyDD68a9OuEjCNeZMjXqvWvjKyN9GO1XpvU",
             authDomain: "taskassigner-13c49.firebaseapp.com",
@@ -86,7 +87,6 @@
             messagingSenderId: "293878815857"
           };
           firebase.initializeApp(config);
-          var database = firebase.database();
           
           var dbref = database.ref().child('text');
           dbref.on('value', snap=>big.innerText = snap.val());
