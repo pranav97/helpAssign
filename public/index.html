@@ -37,7 +37,7 @@
             <div class="level-left">
               <div class="level-item">
                 <p class="subtitle is-5">
-                  <strong>123</strong> Tasks
+                  <strong>Search Available Tasks</strong>
                 </p>
               </div>
               <div class="level-item">
@@ -66,14 +66,13 @@
 
           <div class="container">
             <div class="notification">
-              This container is <strong>centered</strong> on desktop.<br />
-              <h1 id="big"></h1>
+              Sign up to <strong>help</strong> by clicking on an open task below.<br/>
             </div>
           </div>
         </div>
       </section>
 
-      
+
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -87,10 +86,10 @@
           };
           firebase.initializeApp(config);
           var database = firebase.database();
-          
+
           var dbref = database.ref().child('text');
           dbref.on('value', snap=>big.innerText = snap.val());
-        
+
 		</script>
         <script src="js/logout.js"></script>
     </body>
