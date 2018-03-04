@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Life Support</title>
+    <!-- Link to css -->
+    <link href="creative.css" rel="stylesheet">
+    <style>
+        .button1{
+            background-color: mediumaquamarine;
+            border: none;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+        .button1{border-radius: 4px;}
+        .button1:hover {opacity: 1}
+        }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+}
+    </style>
+</head>
+
+<body>
+    <center>
+    <h1>NEW ISSUE</h1>
+    </center>
+
+    <form action="/action_page.php">
+    <label for="loc">Location: <input type="text" name="Location" value=" " size="50"></label>
+    <br><br>
+    <label for="prob">Problem: <input type="text" name="Problem" value=" " size="50"></label>
+    <br><br>
+    Level of Urgency:
+    0 <input type="range" name="points" size="50"> 10
+    <br><br>
+    <label for="task">Task Needed To Help: <!--<input type="text" name="Problem" value=" " size="90">--><textarea></textarea></label>
+    <br><br>
+    <label for="tool">Tools Needed To Help: <!--<input type="text" name="Problem" value=" " size="90">--><textarea></textarea></label>
+    <br><br>
+    <!--<input type="submit" value="Submit">
+    <input type="reset">-->
+    <button class="button button1">Submit</button>
+    <button class="button button1">Reset</button>
+    </form>
+    
+</body>
