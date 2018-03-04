@@ -1,0 +1,41 @@
+[debug] [2018-03-04T13:23:06.336Z] ----------------------------------------------------------------------
+[debug] [2018-03-04T13:23:06.338Z] Command:       /usr/local/Cellar/node/9.7.1/bin/node /usr/local/bin/firebase serve
+[debug] [2018-03-04T13:23:06.339Z] CLI Version:   3.17.4
+[debug] [2018-03-04T13:23:06.339Z] Platform:      darwin
+[debug] [2018-03-04T13:23:06.339Z] Node Version:  v9.7.1
+[debug] [2018-03-04T13:23:06.339Z] Time:          Sun Mar 04 2018 05:23:06 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:06.339Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-04T13:23:06.358Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-04T13:23:06.359Z] > authorizing via signed-in user
+[debug] [2018-03-04T13:23:06.360Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-04T13:23:06.361Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/dkTLktkX5ZXwH5QCN50HN_BdPv_65HOeIjo7MK6LvY1OUq3s6b_inacAMrsoSA7Q',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Mar 04 2018 05:23:06 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:06.488Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-04T13:23:06.505Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/taskassigner-13c49  
+  
+ Sun Mar 04 2018 05:23:06 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:06.911Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-04T13:23:06.913Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/taskassigner-13c49/tokens  
+  
+ Sun Mar 04 2018 05:23:06 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:07.223Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/limjunhyun/Documents/GitHub/helpAssign'...
+[info] 
+[debug] [2018-03-04T13:23:07.227Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/taskassigner-13c49  
+  
+ Sun Mar 04 2018 05:23:07 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:07.656Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-04T13:23:07.656Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/293878815857/clients/_:getWebAppConfig  
+  
+ Sun Mar 04 2018 05:23:07 GMT-0800 (PST)
+[debug] [2018-03-04T13:23:08.091Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
