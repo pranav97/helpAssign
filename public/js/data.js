@@ -11,6 +11,6 @@
       firebase.initializeApp(config);
       var database = firebase.database();
       
-      var dbref = database.ref().child('text');
+      var dbref = database.ref().child('tasks/1/location');
       dbref.on('value', snap=>big.innerText = "big" + " :  " + snap.val());
 }());
