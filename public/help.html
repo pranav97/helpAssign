@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-auth.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <p>&nbsp</p>
     <title>Life Support</title>
     <!-- Link to css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -12,23 +15,85 @@
 
 <body>
     <center>
-    <h1>NEW ISSUE</h1>
+    <h1><strong>NEW ISSUE</strong></h1>
     </center>
 
     <section class="section">
         <div class="container">
 
                 <div class="field">
-                    <label class="label">Location</label>
+                    <label class="label">Title and Location</label>
                     <div class="control">
-                        <input id="loc" class="input" type="text" placeholder="Text input">
+                        <input id="loc" class="input" type="text" placeholder="Type here">
                     </div>
                 </div>
 
+                <style>
+                  #map {
+                    height: 400px;
+                    width: 100%;
+                   }
+                </style>
+              </head>
+              <body>
+                <h3>Your location, if available, is marked below</h3>
+                <div id="map"></div>
+                <script>
+                  // Note: This example requires that you consent to location sharing when
+                  // prompted by your browser. If you see the error "The Geolocation service
+                  // failed.", it means you probably did not give permission for the browser to
+                  // locate you.
+                  var map, infoWindow;
+                  function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                      center: {lat: -34.397, lng: 150.644},
+                      zoom: 6
+                    });
+                    infoWindow = new google.maps.InfoWindow;
+
+                    // Try HTML5 geolocation.
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                          lat: position.coords.latitude,
+                          lng: position.coords.longitude
+                        };
+
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Location found.');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+
+                        //ADD MARKER TO LOCATION
+                        var marker = new google.maps.Marker({
+                          position: map.getCenter(),
+                          map: map
+                        });
+                      }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                      });
+                    } else {
+                      // Browser doesn't support Geolocation
+                      handleLocationError(false, infoWindow, map.getCenter());
+                    }
+                  }
+
+                  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ?
+                                          'Error: The Geolocation service failed.' :
+                                          'Error: Your browser doesn\'t support geolocation.');
+                    infoWindow.open(map);
+                  }
+                </script>
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5jR6JbqFrQu3pwx96xFc3kYjG7EpNCgA&callback=initMap">
+                </script>
                 <div class="field">
-                  <label class="label">Problem</label>
+                  <p>&nbsp</p>
+                  <p><label class="label">Description of Problem</label></P>
                   <div class="control">
-                    <textarea id="prob" class="textarea" placeholder="Textarea"></textarea>
+                    <textarea id="prob" class="textarea" placeholder="Type here"></textarea>
                   </div>
                 </div>
 
@@ -40,16 +105,16 @@
                 </div>
 
                 <div class="field">
-                  <label class="label">Tools Needed To Help</label>
+                  <label class="label">What tools or resources do you need?</label>
                   <div class="control">
-                    <input id="tools" type="text" name="Problem" value=" " size="90">
+                    <input id="tools" type="text" name="Problem" laceholder="Type here" value=" " size="90">
                   </div>
                 </div>
 
                 <div class="field">
-                  <label class="label">Task Needed To Help</label>
+                  <label class="label">What task do you need help with?</label>
                   <div class="control">
-                    <input id="tasks" class="input" type="text" placeholder="Text input">
+                    <input id="tasks" class="input" type="text" placeholder="Type here">
                   </div>
                 </div>
 
@@ -78,4 +143,15 @@
 	console.log(resp);
 	</script>
     <script  src="js/data.js"></script>
+    <script>
+    var config = {
+      apiKey: "AIzaSyDD68a9OuEjCNeZMjXqvWvjKyN9GO1XpvU",
+      authDomain: "taskassigner-13c49.firebaseapp.com",
+      databaseURL: "https://taskassigner-13c49.firebaseio.com",
+      projectId: "taskassigner-13c49",
+      storageBucket: "taskassigner-13c49.appspot.com",
+      messagingSenderId: "293878815857"
+    };
+    firebase.initializeApp(config);
+    </script>
 </body>
